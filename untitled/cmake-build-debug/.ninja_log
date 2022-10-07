@@ -1,0 +1,18 @@
+# ninja log v5
+5	1047	6868642371377640	build.ninja	c3fc07f170c59d18
+12	3503	6868641106953436	CMakeFiles/untitled.dir/main.cpp.obj	66c19616286afe98
+31	195	6861425849800856	CMakeFiles/untitled.dir/Player.cpp.obj	15e8f7b6519dcd80
+3503	5531	6868641127115627	untitled.exe	427b642a027b9d0b
+29	2635	6868641098301997	CMakeFiles/untitled.dir/Drawer.cpp.obj	7f9bf36e2b2a53b5
+24	2751	6868639114990877	CMakeFiles/untitled.dir/Cell.cpp.obj	8822b416d282cc99
+33	2775	6859928121950114	CMakeFiles/untitled.dir/Controller.cpp.obj	60983eb929ad28e
+21	2676	6868641098731434	CMakeFiles/untitled.dir/Field.cpp.obj	9b122589154d1f52
+41	206	6861425849920855	CMakeFiles/untitled.dir/Event.cpp.obj	38dad05218a7f8c1
+60	603	6861424834481001	CMakeFiles/untitled.dir/ConcreteEvents.cpp.obj	7c5a38b4fd33f9dc
+73	518	6868438238004205	CMakeFiles/untitled.dir/Event_Group_Bonus.cpp.obj	6fad075e79ac33c
+49	637	6861686060418602	CMakeFiles/untitled.dir/Event_Group_Movable.cpp.obj	3e56d8284e1f32ce
+90	408	6867725615119505	CMakeFiles/untitled.dir/Event_Group_Static.cpp.obj	2a94e0154e54b650
+65	508	6868438237902021	CMakeFiles/untitled.dir/Event_Interface.cpp.obj	95aeac5bf1097ce
+77	4162	6867767164317316	CMakeFiles/untitled.dir/Event_Static_Apple.cpp.obj	2b171043ffa62a0a
+55	513	6868438237902021	CMakeFiles/untitled.dir/Event_Group_Damage.cpp.obj	8254571535aaae87
+46	2236	6868438255499307	CMakeFiles/untitled.dir/Event_Damage_Arrow.cpp.obj	e39fb9c410037249
