@@ -1,22 +1,23 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <iomanip>
-#include "Controller.h"
+#include "Controller/Command_Reader.h"
 #include "Player.h"
-#include "Cell.h"
-#include "Field.h"
+#include "FieldCell/Cell.h"
+#include "FieldCell/Field.h"
 #include "Drawer.h"
-#include "Event_Damage_Arrow.h"
+#include "Events/Event_Damage_Arrow.h"
+#include "Controller/Controller_p.h"
 #include <vector>
 #include <stdlib.h>
 
 int main() {
-    Cell cell(0);
-    Field f(35,25);
-    Drawer drawer;
     Player player(3);
-    Controller controller;
-    Event_Damage_Arrow eventStaticApple;
+    Cell cell( 0, player);
+    Field f(player, 35,25);
+    Drawer drawer;
+    Controller_p controller;
+    Command_Reader command_reader;
     f.create_map();
 
     srand(time(NULL));
@@ -35,18 +36,26 @@ int main() {
 
         drawer.draw(cell, f, window);
 
-        controller.player_handler();
+        command_reader.player_handler();
 
 
-        f.move(controller,player);
+        controller.controller(f,player,command_reader);
 
-        if(f.get_end_game()){
+        if(controller.END()){
             window.close();
         }
 
-        f.add_wall();
+        f.add_skull(f);
 
-        f.add_arrow();
+        f.add_potion(f);
+
+        f.add_coin(f);
+
+        f.add_wall(f);
+
+        f.add_arrow(f);
+
+        f.add_key(f,player);
 
         window.display();
 
