@@ -1,0 +1,5 @@
+"C:\Program Files\JetBrains\CLion\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion/bin/ninja/win/ninja.exe" -G Ninja C:\Users\blood\CLionProjects\untitled
+-- Found SFML 2.5.1 in C:/Users/blood/CLionProjects/lib/SFML/GCC 7.3.0 MinGW (SEH) - 64-bit/SFML-2.5.1/lib/cmake/SFML
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/blood/CLionProjects/untitled/cmake-build-debug
