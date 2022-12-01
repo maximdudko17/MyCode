@@ -23,21 +23,7 @@ public:
     int v;
     Cell(int v, Player& player): v(v), player(player){}
 
-    void arrow_new();
-
-    void skull_new();
-
-    void none_new();
-
-    void wall_new();
-
-    void player_new();
-
-    void potion_new();
-
-    void coin_new();
-
-    void key_new();
+    void event_new(Event_Interface* eventInterface);
 
     Event_Damage_Arrow* arrow_is();
 
@@ -55,15 +41,7 @@ public:
 
     Event_Bonus_Key* key_is();
 
-    void arrow_effect();
-
-    void potion_effect();
-
-    void coin_effect();
-
-    void key_effect();
-
-    void skull_effect();
+    void event_effect();
 
     Event_Interface* get();
 

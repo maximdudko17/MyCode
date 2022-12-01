@@ -1,41 +1,26 @@
 #include "Command_Reader.h"
 
-bool Command_Reader::get_up(){
-    return UP;
-}
-bool Command_Reader::get_down(){
-    return DOWN;
-}
-bool Command_Reader::get_right(){
-    return RIGHT;
-}
-bool Command_Reader::get_left(){
-    return LEFT;
-}
-void Command_Reader::player_handler(){
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-        UP = true;
-        DOWN = false;
-        RIGHT = false;
-        LEFT = false;
-    }
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
-        UP = false;
-        DOWN = true;
-        RIGHT = false;
-        LEFT = false;
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
-        UP = false;
-        DOWN = false;
-        RIGHT = false;
-        LEFT = true;
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-        UP = false;
-        DOWN = false;
-        RIGHT = true;
-        LEFT = false;
-    }
+void Command_Reader::player_handler(Command_File& command_file) {
+    // U - UP D - DOWN L - LEFT R - RIGHT
+    command_read->command_read(setting, direction);
+
 }
+
+void Command_Reader::read_commands(Command_File& command_file){
+    command_file.read_str();
+    command_file.def_commands();
+    setting[command_file.get_char(1)] = UP;
+    setting[command_file.get_char(2)] = DOWN;
+    setting[command_file.get_char(3)] = LEFT;
+    setting[command_file.get_char(4)] = RIGHT;
+}
+
+void Command_Reader::stop_move() {
+    direction = STOP;
+}
+
+char Command_Reader::get_direction(){
+    return direction;
+};
+

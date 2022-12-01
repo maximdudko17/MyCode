@@ -1,36 +1,8 @@
 #include "Cell.h"
 
 
-void Cell::arrow_new(){
-    some_event = new Event_Damage_Arrow;
-}
-
-void Cell::skull_new(){
-    some_event = new Event_Damage_Skull;
-}
-
-void Cell::none_new(){
-    some_event = new Event_ELse_None;
-}
-
-void Cell::wall_new(){
-    some_event = new Event_Else_Wall;
-}
-
-void Cell::player_new(){
-    some_event = new Event_Else_Player;
-}
-
-void Cell::potion_new(){
-    some_event = new Event_Bonus_Potion;
-}
-
-void Cell::coin_new(){
-    some_event = new Event_Bonus_Coin;
-}
-
-void Cell::key_new(){
-    some_event = new Event_Bonus_Key;
+void Cell::event_new(Event_Interface* eventInterface){
+    some_event = eventInterface;
 }
 
 Event_Damage_Arrow* Cell::arrow_is(){
@@ -73,22 +45,7 @@ Event_Bonus_Key* Cell::key_is(){
     return event;
 }
 
-void Cell::arrow_effect(){
-    some_event->effect(player);
-}
-
-void Cell::potion_effect(){
-    some_event->effect(player);
-}
-
-void Cell::coin_effect(){
-    some_event->effect(player);
-}
-
-void Cell::key_effect(){
-    some_event->effect(player);
-}
-void Cell::skull_effect(){
+void Cell::event_effect(){
     some_event->effect(player);
 }
 
