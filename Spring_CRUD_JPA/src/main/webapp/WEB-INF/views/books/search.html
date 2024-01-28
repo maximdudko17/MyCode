@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+
+
+
+<form th:method="Get" th:action="@{/books/search?sort_by_year=${startingWith}}" th:object="${book}">
+    <label for="startingWith">Enter name: </label>
+    <input type="text" th:value="${startingWith}" name="startingWith" id="startingWith"/>
+
+    <input type="submit" value="Search!"/>
+</form>
+
+<div th:if="${book.isPresent()}">
+    <p th:text="${book.get().getName() + ', ' + book.get().getAuthor()}">VALUE</p>
+    <div th:if="${book.get().getOwner() == null}">
+        <p>kNIGGA is FREE</p>
+    </div>
+    <div th:if="${book.get().getOwner() != null}">
+        <p th:text="${'kNIGGA y: ' + book.get().getOwner().getName()}">VALUE</p>
+    </div>
+
+</div>
+
+<div th:if="${book.isEmpty()}">
+    <p>No such kNIGGA!</p>
+</div>
+
+</body>
+</html>
